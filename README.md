@@ -1,9 +1,9 @@
-# Název mého projektu, programu, hry...
+# F1 stats dashboard
 
 ## Téma
 
-Tady bude krátký a úderný popis o účelu, významu, funkcionalitě...
-
+F1 Dashboard s live informacemi ze závodů, statistikami z této sezóny a informacemi o závodnících.
+inspirace:[01](https://dribbble.com/shots/11407021-F1-Insights-Dashboard), [02](https://dribbble.com/shots/6746836-F1-Red-Bull-Racing-interface)
 ## Odkazy pro vývoj
 
 Zde budou živé linky na:
