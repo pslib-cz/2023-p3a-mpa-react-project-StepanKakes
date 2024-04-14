@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import DriversList from './components/driversList';
-import DriverInfo from './components/driverInfo';
 import { DriverRanking, DriverDetail } from './types';
-import { generateTestDrivers, generateTestDriverDetail } from './types'; 
-import { RaceData, DriverDetails, CarData, LapData, IntervalData } from './types/index';
 import './App.css';
 import LiveDriversList from './components/liveDriversList';
 import LiveDriverInfo from './components/liveDriverInfo';
 import { SelectedDriverContext } from './context/driverProvider';
-
-
+import { DriversContext } from './context/driverProvider';
+import DriverInfo from './components/driverInfo';
+import DriverList from './components/driversList';
+import LiveLocation from './components/liveLocation';
+import { DriverDataProvider } from './context/driverDataContext';
 /*
 const App: React.FC = () => {
   const [drivers, setDrivers] = useState<DriverRanking[]>([]);
@@ -43,68 +42,28 @@ const App: React.FC = () => {
       .then(data => setSelectedDriver(data.response[0]))
       .catch(error => console.error('Error fetching driver details:', error));
   };
+
+  <DriversContext.Provider  value={{ drivers, setDrivers, selectedDriver, setSelectedDriver }}>
+    <div className="container">
+      <DriverList/>
+      <DriverInfo/>
+    </div>
+  </DriversContext.Provider>
 */
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   const [drivers, setDrivers] = useState<DriverRanking[]>([]);
-  const [selectedDriver, setSelectedDriver] = useState<DriverDetail | null>(null); 
+  const [selectedDriver, setSelectedDriver] = useState<DriverDetail | null>(null);
   const [selectedDriverNumber, setSelectedDriverNumber] = useState<number | null>(null);
-  const [raceData, setRaceData] = useState<RaceData[]>([]);
-  const [driverDetails, setDriverDetails] = useState<DriverDetails []>([]);
-  
-
-  const fetchData = () => {
-    const testDrivers = generateTestDrivers();
-    setDrivers(testDrivers);
-  };
-
-  useEffect(() => {
-    fetchData();
-    fetchDriverDetails();
-  }, []);
-
-
-    const fetchDriverDetails = () => {
-    fetch('https://api.openf1.org/v1/drivers', {
-    })
-      .then(response => response.json())
-      .then(data => setDriverDetails(data.response))
-      .catch(error => console.error('Error fetching drivers:', error));
-  };
-    
-    useEffect(() => {
-      const interval = setInterval(async () => {
-        try {
-          const response = await fetch('https://api.openf1.org/v1/position?meeting_key=latest');
-          const newData: RaceData[] = await response.json();
-          setRaceData(newData);
-        } catch (error) {
-          console.error('Error fetching updated race data:', error);
-        }
-      }, 1000);
-      return () => clearInterval(interval);
-    }, []);
-  
-  
-  const handleDriverClick = (driverId: number) => {
-    const selectedDriverData = drivers.find(driver => driver.driver.id === driverId);
-    if (selectedDriverData) {
-      setSelectedDriver(generateTestDriverDetail()); // Use generateTestDriverDetail function
-    } else {
-      console.error('Driver not found in test data');
-    }
-  };
-
-
-
 
   return (
     <SelectedDriverContext.Provider value={{ selectedDriverNumber, setSelectedDriverNumber }}>
-      <div className="container">
-        <LiveDriversList />
-        <LiveDriverInfo />
-      </div>
-      
+      <DriverDataProvider>
+        <div className="container">
+          <LiveDriversList />
+          <LiveDriverInfo />
+        </div>
+      </DriverDataProvider>
     </SelectedDriverContext.Provider>
   );
 };

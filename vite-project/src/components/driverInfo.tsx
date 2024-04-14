@@ -1,26 +1,24 @@
 import React from 'react';
 import { DriverDetail, DriverRanking } from '../types/index';
 import styles from '../styles/driverInfo.module.css';
+import { useDriversContext } from '../context/driverProvider';
 
-interface Props {
-  driver: DriverDetail | null;
-  drivers: DriverRanking[];
-}
 
-const DriverInfo: React.FC<Props> = ({ driver, drivers }) => {
-  if (!driver) {
+const DriverInfo: React.FC = () => {
+  const { selectedDriver, drivers } = useDriversContext();
+  if (!selectedDriver) {
     return <div>No driver selected</div>;
   }
-  const [firstName, surname] = driver.name.split(' ');
-  const firstThreeLetters = driver.name.slice(0, 3);
+  const [firstName, surname] = selectedDriver.name.split(' ');
+  const firstThreeLetters = selectedDriver.name.slice(0, 3);
   const firstLetter = firstName.charAt(0);
 
 
   const today = new Date();
-  const birthDate = new Date(driver.birthdate);
+  const birthDate = new Date(selectedDriver.birthdate);
   const diffTime = Math.abs(today.getTime() - birthDate.getTime());
   const diffYears = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365.25)); 
-  const driverRanking = drivers.find(d => d.driver.id === driver.id);
+  const driverRanking = drivers.find(d => d.driver.id === selectedDriver.id);
   
 
   function getOrdinalSuffix(position: number) {
@@ -44,14 +42,14 @@ const DriverInfo: React.FC<Props> = ({ driver, drivers }) => {
         <div className={styles['driver-name-container']}>
           <div className={styles['driver-name-flag']}>
           <h2 className={styles['driver-name']}>{firstName}</h2>
-          <img className={styles['driver-flag']} src={`https://media.formula1.com/d_default_fallback_image.png/content/dam/fom-website/flags/${driver.country.name}.jpg`} alt={driver.name}/>
+          <img className={styles['driver-flag']} src={`https://media.formula1.com/d_default_fallback_image.png/content/dam/fom-website/flags/${selectedDriver.country.name}.jpg`} alt={selectedDriver.name}/>
           </div>
           <h2 className={styles['driver-surname']}>{surname}</h2>
-          <p className={styles['driver-team']}>{driver.teams[0].team.name}</p>
+          <p className={styles['driver-team']}>{selectedDriver.teams[0].team.name}</p>
         </div>
         <div className={styles['image-container']}>
-          <img className={styles['driver-image']} src={`https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/${firstLetter}/${firstThreeLetters}${driver.abbr}01_${firstName}_${surname}/${firstThreeLetters}${driver.abbr}01.png`} alt={driver.name}/>
-          <img className={styles['driver-number-image']} src={`https://media.formula1.com/d_default_fallback_image.png/content/dam/fom-website/2018-redesign-assets/drivers/number-logos/${firstThreeLetters}${driver.abbr}01.png`} alt={`${driver.name}-number`} />
+          <img className={styles['driver-image']} src={`https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/${firstLetter}/${firstThreeLetters}${selectedDriver.abbr}01_${firstName}_${surname}/${firstThreeLetters}${selectedDriver.abbr}01.png`} alt={selectedDriver.name}/>
+          <img className={styles['driver-number-image']} src={`https://media.formula1.com/d_default_fallback_image.png/content/dam/fom-website/2018-redesign-assets/drivers/number-logos/${firstThreeLetters}${selectedDriver.abbr}01.png`} alt={`${selectedDriver.name}-number`} />
         </div>
       </div>
       <div className={styles['driver-info']}>
@@ -71,19 +69,19 @@ const DriverInfo: React.FC<Props> = ({ driver, drivers }) => {
           </div>
           <div className={styles['driver-races-info']}>
                 <div>
-                  <p>{driver.grands_prix_entered}</p>
+                  <p>{selectedDriver.grands_prix_entered}</p>
                   <p>GP's</p>
                 </div>
                 <div>
-                  <p>{driver.podiums}</p>
+                  <p>{selectedDriver.podiums}</p>
                   <p>podiums</p>
                 </div>
                 <div>
-                  <p>{getOrdinalSuffix(driver.highest_race_finish.position)} <span className={styles['hrf-number']}>(x{driver.highest_race_finish.number})</span></p>
+                  <p>{getOrdinalSuffix(selectedDriver.highest_race_finish.position)} <span className={styles['hrf-number']}>(x{selectedDriver.highest_race_finish.number})</span></p>
                   <p>highest race finnish</p>
                 </div>
                 <div>
-                  <p>{driver.world_championships}</p>
+                  <p>{selectedDriver.world_championships}</p>
                   <p>WC</p>
                 </div>
               </div>
