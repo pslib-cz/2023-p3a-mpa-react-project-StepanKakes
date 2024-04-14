@@ -4,6 +4,8 @@
 
 F1 Dashboard s live informacemi ze závodů, statistikami z této sezóny a informacemi o závodnících.
 inspirace:[01](https://dribbble.com/shots/11407021-F1-Insights-Dashboard), [02](https://dribbble.com/shots/6746836-F1-Red-Bull-Racing-interface)
+https://www.figma.com/file/LYV1BtY0WuTrVDIoS9kguX/f1-dashboard?type=design&node-id=0%3A1&mode=design&t=gR4IpcDseirAnync-1
+
 ## Odkazy pro vývoj
 
 Zde budou živé linky na:
