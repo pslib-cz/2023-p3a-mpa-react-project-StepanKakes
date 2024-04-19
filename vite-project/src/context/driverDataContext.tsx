@@ -81,7 +81,7 @@ export const DriverDataProvider: React.FC<PropsWithChildren> = ({ children }) =>
 
   useEffect(() => {
     fetchDriverData();
-    const intervalId = setInterval(fetchDriverData, 2000);
+    const intervalId = setInterval(fetchDriverData, 10000);
     return () => clearInterval(intervalId);
   }, [selectedDriverNumber]); 
   

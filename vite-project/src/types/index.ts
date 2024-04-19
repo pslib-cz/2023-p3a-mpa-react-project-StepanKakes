@@ -57,7 +57,7 @@ export interface DriverPosition {
   position: number;
 }
 
-export interface DriverDetail {
+export interface LiveDriverDetail {
   session_key: number;
   meeting_key: number;
   broadcast_name: string;
@@ -103,6 +103,9 @@ export interface IntervalData {
   interval: number | null;
 }
 
+export interface PedalBarProps {
+  pedalType: 'brake' | 'throttle'; 
+}
 
 // debug data
 export const generateTestDrivers = (): DriverRanking[] => {
@@ -527,31 +530,5 @@ export const generateTestDriverDetail = (): DriverDetail => {
       // Další řádky pro další týmy...
     ]
   };
-};
-
-export const testRaceData = (): RaceData[] => {
-  return [
-  {
-  session_key: 1,
-  meeting_key: 1,
-  driver_number: 33,
-  date: "2023-09-17T12:03:54.408000",
-  position: 1,
-},
-{
-  session_key: 1,
-  meeting_key: 1,
-  driver_number: 44,
-  date: "2023-09-17T12:03:54.408000",
-  position: 2,
-},
-{
-  session_key: 1,
-  meeting_key: 1,
-  driver_number: 16,
-  date: "2023-09-17T12:03:54.408000",
-  position: 3,
-}
-  ];
 };
 

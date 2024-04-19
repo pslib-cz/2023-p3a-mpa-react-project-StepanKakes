@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { SelectedDriverContext } from '../context/driverProvider';
-import { DriverDetail, DriverPosition } from '../types';
+import { LiveDriverDetail, DriverPosition } from '../types';
 import styles from '../styles/liveDriversList.module.css';
 
 const LiveDriversList = () => {
 
 const { setSelectedDriverNumber } = useContext(SelectedDriverContext);
   const [driverPositions, setDriverPositions] = useState<DriverPosition[]>([]);
-  const [driverDetails, setDriverDetails] = useState<DriverDetail[]>([]);
+  const [driverDetails, setDriverDetails] = useState<LiveDriverDetail[]>([]);
   const [lastDate, setLastDate] = useState<string | null>(null);
  
   useEffect(() => {
@@ -54,7 +54,7 @@ const { setSelectedDriverNumber } = useContext(SelectedDriverContext);
       }
     };
   
-    const intervalId = setInterval(fetchDriverData, 2000);
+    const intervalId = setInterval(fetchDriverData, 10000);
   
     return () => clearInterval(intervalId);
   }, []);
