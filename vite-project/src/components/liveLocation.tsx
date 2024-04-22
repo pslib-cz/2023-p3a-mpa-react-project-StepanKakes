@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const LiveLocation = () => {
   const [locations, setLocations] = useState([]);
@@ -19,7 +19,7 @@ const LiveLocation = () => {
   return (
     <svg width="500" height="500">
       <circle cx="250" cy="250" r="200" stroke="black" strokeWidth="3" fill="transparent" />
-      {locations.map((location, index) => {
+      {locations.map((index) => {
         const angle = (locations.length) * 2 * Math.PI;
         const x = 250 + 200 * Math.cos(angle);
         const y = 250 + 200 * Math.sin(angle);

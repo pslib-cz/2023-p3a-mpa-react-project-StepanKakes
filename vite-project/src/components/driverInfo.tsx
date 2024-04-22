@@ -1,5 +1,4 @@
 import React from 'react';
-import { DriverDetail, DriverRanking } from '../types/index';
 import styles from '../styles/driverInfo.module.css';
 import { useDriversContext } from '../context/driverProvider';
 

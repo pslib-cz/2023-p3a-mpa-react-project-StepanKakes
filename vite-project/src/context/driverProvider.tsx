@@ -1,5 +1,5 @@
 import React from 'react';
-import  { createContext, useContext, useState } from 'react';
+import  { createContext, useContext } from 'react';
 import { DriverRanking, DriverDetail } from '../types/index';
 
 interface SelectedDriverContextProps {

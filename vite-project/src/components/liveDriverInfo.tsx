@@ -1,7 +1,3 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { SelectedDriverContext } from '../context/driverProvider';
-import { CarData, IntervalData, LapData } from '../types';
-import { useDriverDataContext } from '../context/driverDataContext';
 import PedalBar from './pedalBar';
 import RpmMeter from './rpmMeter';
 import SpeedMeter from './speedMeter';

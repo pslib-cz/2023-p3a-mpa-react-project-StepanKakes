@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { SelectedDriverContext } from '../context/driverProvider';
 import { LiveDriverDetail, DriverPosition } from '../types';
 import styles from '../styles/liveDriversList.module.css';
@@ -58,10 +58,6 @@ const { setSelectedDriverNumber } = useContext(SelectedDriverContext);
   
     return () => clearInterval(intervalId);
   }, []);
-
-  const handleDriverClick = (driverNumber: number) => {
-    setSelectedDriverNumber(driverNumber);
-  };
  
   return (
     <ul className={styles['drivers-list']}>
