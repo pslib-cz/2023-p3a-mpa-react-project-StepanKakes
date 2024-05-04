@@ -25,8 +25,12 @@ export const useDriverDataContext = () => {
 export const DriverDataProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [carData, setCarData] = useState<CarData | null>(null);
   const [lapData, setLapData] = useState<LapData | null>(null);
+<<<<<<< HEAD
   const [intervalData, setIntervalData] = useState<IntervalData[]>([]);
   const [stintData, setStintData] = useState<StintData[]>([]);
+=======
+  const [intervalData] = useState<IntervalData | null>(null);
+>>>>>>> 723b936826607722b4f41a60fe67a34c4fb21570
   const [lastDateCarData, setLastDateCarData] = useState<string | null>(null);
   const [lastDateLaps, setLastDateLaps] = useState<string | null>(null);
   const [lastDateIntervals, setLastDateIntervals] = useState<string | null>(null);

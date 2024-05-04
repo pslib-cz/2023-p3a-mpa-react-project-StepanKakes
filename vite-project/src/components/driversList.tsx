@@ -1,9 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { DriverRanking } from '../types/index';
 import styles from '../styles/driversList.module.css';
 import { useDriversContext } from '../context/driverProvider';
-import { generateTestDriverDetail, generateTestDrivers } from '../types';
 
 
 const DriversList: React.FC = () => {

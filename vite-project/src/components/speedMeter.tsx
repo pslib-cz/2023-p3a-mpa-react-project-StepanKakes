@@ -1,4 +1,3 @@
-import React from 'react';
 import { useDriverDataContext } from '../context/driverDataContext';
 import Speedometer, {
   Background,

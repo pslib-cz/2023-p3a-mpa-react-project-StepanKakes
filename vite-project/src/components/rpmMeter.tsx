@@ -1,4 +1,3 @@
-import React from 'react';
 import { useDriverDataContext } from '../context/driverDataContext';
 import Speedometer, {
   Background,
@@ -25,10 +24,13 @@ const RpmMeter = () => {
         <DangerPath offset={-5} arcWidth={10} color='rgba(255, 0, 0, 0.40)' angle={63} />
         <Progress color='rgba(39, 178, 245, 0.60)' arcWidth={10} />
         <Indicator>
-          {(value, textProps) => (
+          {() => (
             <>
               <text
+<<<<<<< HEAD
                 {...textProps}  
+=======
+>>>>>>> 723b936826607722b4f41a60fe67a34c4fb21570
                 fontSize={36}
                 fill="#fff"
                 x={250 / 2}
@@ -39,7 +41,6 @@ const RpmMeter = () => {
                 {formattedRpm}
               </text>
               <text
-                {...textProps}
                 fontSize={20} 
                 fill="#fff"
                 x={250 / 2}

@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import styles from '../styles/liveDriverInfo.module.css';
+=======
+>>>>>>> 723b936826607722b4f41a60fe67a34c4fb21570
 import PedalBar from './pedalBar';
 import RpmMeter from './rpmMeter';
 import SpeedMeter from './speedMeter';
