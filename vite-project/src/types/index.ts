@@ -63,7 +63,25 @@ export interface LiveDriverDetail {
   broadcast_name: string;
   full_name: string;
   driver_number: number;
+  country_code: string;
+  first_name: string;
+  last_name: string;
+  headshot_url: string;
+  name_acronym: string;
+  team_colour: string;
+  team_name: string;
 }
+
+export type StintData = {
+  compound: string;
+  driver_number: number;
+  lap_end: number;
+  lap_start: number;
+  meeting_key: number;
+  session_key: number;
+  stint_number: number;
+  tyre_age_at_start: number;
+};
 
 
 export interface CarData {

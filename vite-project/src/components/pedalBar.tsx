@@ -6,6 +6,7 @@ import styles from './pedalBar.module.css';
 const PedalBar: React.FC<PedalBarProps> = ({ pedalType }) => { 
   const { carData } = useDriverDataContext();
   const rawPedalValue = pedalType === 'brake' ? carData?.brake : carData?.throttle;
+  const pedalColor = pedalType === 'brake' ? 'red' : 'green';
   const pedalValue = rawPedalValue ? (rawPedalValue > 100 ? 100 : rawPedalValue) : 0;
   console.log("pedalValue: " + pedalValue);
   return (
@@ -19,10 +20,9 @@ const PedalBar: React.FC<PedalBarProps> = ({ pedalType }) => {
             <li>0</li>
           </ul>
           <div className={styles['bar-body']}>
-            <span className={styles['bar-inner']} style={{ height: `${pedalValue}%` }}/>
+            <span className={styles['bar-inner']} style={{ height: `${pedalValue}%`, backgroundColor: `${pedalColor}` }}/>
           <div/>
         </div>
-        <p style={{bottom: `${pedalValue}%`}}>{pedalValue}</p>
       </div>
       <p>{pedalType}</p>
     </div>

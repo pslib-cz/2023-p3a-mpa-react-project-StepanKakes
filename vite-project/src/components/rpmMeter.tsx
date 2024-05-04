@@ -21,14 +21,14 @@ const RpmMeter = () => {
         <Background />
         <Arc arcWidth={10} />
         <Needle baseOffset={-27} circleRadius={0} offset={18} color='#ff0000' />
-        <Marks step={500} lineSize={12} />
+        <Marks step={500} lineSize={12} fontSize={0}/>
         <DangerPath offset={-5} arcWidth={10} color='rgba(255, 0, 0, 0.40)' angle={63} />
         <Progress color='rgba(39, 178, 245, 0.60)' arcWidth={10} />
         <Indicator>
           {(value, textProps) => (
             <>
               <text
-                {...textProps}
+                {...textProps}  
                 fontSize={36}
                 fill="#fff"
                 x={250 / 2}

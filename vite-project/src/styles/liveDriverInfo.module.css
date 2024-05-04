@@ -1,0 +1,37 @@
+.live-driver-info-container{
+    display: grid;
+    grid-template-areas: "laptime . . ."
+                         "speedmeter brakebar throttlebar rpmmeter"
+                         "stintstable . . nearbydriverslist";
+    justify-items: center;
+}
+
+.live-driver-info-container > div:nth-child(1) {
+    grid-area: laptime;
+}
+.live-driver-info-container > div:nth-child(2) {
+    grid-area: speedmeter;
+    width: fit-content;
+    height: fit-content;
+}
+.live-driver-info-container > div:nth-child(5) {
+    grid-area: rpmmeter;
+    width: fit-content;
+    height: fit-content;
+}
+
+.live-driver-info-container > div:nth-child(3) {
+    grid-area: brakebar;
+    margin-right: 1em;
+}
+  
+.live-driver-info-container > div:nth-child(4) {
+  grid-area: throttlebar;
+  margin-left: 1em;
+}
+.live-driver-info-container > div:nth-child(6) {
+    grid-area: stintstable;
+}
+.live-driver-info-container > div:nth-child(7) {
+    grid-area: nearbydriverslist;
+}

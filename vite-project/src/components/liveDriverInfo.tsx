@@ -1,13 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { SelectedDriverContext } from '../context/driverProvider';
-import { CarData, IntervalData, LapData } from '../types';
-import { useDriverDataContext } from '../context/driverDataContext';
+import styles from '../styles/liveDriverInfo.module.css';
 import PedalBar from './pedalBar';
 import RpmMeter from './rpmMeter';
 import SpeedMeter from './speedMeter';
-import styles from './liveDriverInfo.module.css'
-
+import LapTime from './lapTime';
+import NearbyDriversList from './nearbyDriversList';
+import StintsTable from './stintsTable';
 const LiveDriverInfo = () => {
+
 
   /*
   {carData && (
@@ -34,11 +33,14 @@ const LiveDriverInfo = () => {
   */
 
   return (
-    <div className={styles['container']}>
+    <div className={styles['live-driver-info-container']}>
+      <LapTime/>
       <SpeedMeter/>
       <PedalBar pedalType="brake" />
       <PedalBar pedalType="throttle" />
       <RpmMeter/>
+      <StintsTable/>
+      <NearbyDriversList/>
     </div>
   );
 };
