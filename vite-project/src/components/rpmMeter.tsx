@@ -17,43 +17,39 @@ const RpmMeter = () => {
   return (
     <div className={styles['speedometer-container']}>
       <Speedometer value={carData?.rpm} fontFamily='f1' max={15000}>
-        <Background />
-        <Arc arcWidth={10} />
-        <Needle baseOffset={-27} circleRadius={0} offset={18} color='#ff0000' />
-        <Marks step={500} lineSize={12} fontSize={0}/>
-        <DangerPath offset={-5} arcWidth={10} color='rgba(255, 0, 0, 0.40)' angle={63} />
-        <Progress color='rgba(39, 178, 245, 0.60)' arcWidth={10} />
-        <Indicator>
-          {() => (
-            <>
-              <text
-<<<<<<< HEAD
-                {...textProps}  
-=======
->>>>>>> 723b936826607722b4f41a60fe67a34c4fb21570
-                fontSize={36}
-                fill="#fff"
-                x={250 / 2}
-                y={130}
-                textAnchor="middle"
-                fontFamily='f1'
-              >
-                {formattedRpm}
-              </text>
-              <text
-                fontSize={20} 
-                fill="#fff"
-                x={250 / 2}
-                y={155} 
-                textAnchor="middle"
-                fontFamily='f1'
-              >
-                rpm
-              </text>
-            </>
-          )}
-        </Indicator>
-      </Speedometer>
+  <Background />
+  <Arc arcWidth={10} />
+  <Needle baseOffset={-27} circleRadius={0} offset={18} color='#ff0000' />
+  <Marks step={500} lineSize={12} fontSize={0}/>
+  <DangerPath offset={-5} arcWidth={10} color='rgba(255, 0, 0, 0.40)' angle={63} />
+  <Progress color='rgba(39, 178, 245, 0.60)' arcWidth={10} />
+  <Indicator>
+    {() => (
+      <g transform="rotate(125, 125, 125)"> {/* Add this line */}
+        <text
+          fontSize={36}
+          fill="#fff"
+          x={250 / 2}
+          y={130}
+          textAnchor="middle"
+          fontFamily='f1'
+        >
+          {formattedRpm}
+        </text>
+        <text
+          fontSize={20} 
+          fill="#fff"
+          x={250 / 2}
+          y={155} 
+          textAnchor="middle"
+          fontFamily='f1'
+        >
+          rpm
+        </text>
+      </g>
+    )}
+  </Indicator>
+</Speedometer>
     </div>
   );
 };
