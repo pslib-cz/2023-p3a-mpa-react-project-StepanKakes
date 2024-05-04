@@ -4,7 +4,7 @@ import { useDriversContext } from '../context/driverProvider';
 
 
 const DriverInfo: React.FC = () => {
-  const { selectedDriver, drivers } = useDriversContext();
+  const { selectedDriver, drivers, selectedDriverColor } = useDriversContext();
   if (!selectedDriver) {
     return <div>No driver selected</div>;
   }
@@ -36,6 +36,8 @@ const DriverInfo: React.FC = () => {
 }
 
   return (
+    <>
+    
     <div className={styles['driver-stats-container']}>
       <div className={styles['driver-container']}>
         <div className={styles['driver-name-container']}>
@@ -86,6 +88,9 @@ const DriverInfo: React.FC = () => {
               </div>
             </div>
           </div>
+          <div className={styles['circle-1']} style={{ background: ` linear-gradient(#${selectedDriverColor} 0%, black 100%)` }}></div>
+          <div className={styles['circle-2']} style={{ background: ` linear-gradient(#${selectedDriverColor} 0%, black 100%)` }}></div>
+          </>
   );
 };
 

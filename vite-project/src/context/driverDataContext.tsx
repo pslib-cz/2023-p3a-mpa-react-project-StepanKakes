@@ -53,7 +53,7 @@ export const DriverDataProvider: React.FC<PropsWithChildren> = ({ children }) =>
   };
 
   const fetchLapsData = () => {
-    let lapsUrl = `https://corsproxy.io/?https://api.openf1.org/v1/laps?session_key=latest&driver_number=${selectedDriverNumber}`;
+    let lapsUrl = `https://api.openf1.org/v1/laps?session_key=latest&driver_number=${selectedDriverNumber}`;
     if (lastDateLaps) {
       lapsUrl += `&date>=${lastDateLaps}`;
     }
@@ -70,23 +70,26 @@ export const DriverDataProvider: React.FC<PropsWithChildren> = ({ children }) =>
   };
 
   const fetchIntervalsData = () => {
-    let intervalsUrl = `https://corsproxy.io/?https://api.openf1.org/v1/intervals?session_key=latest`;
+    let intervalsUrl = `https://api.openf1.org/v1/intervals?session_key=latest`;
     if (lastDateIntervals) {
       intervalsUrl += `&date>=${lastDateIntervals}`;
     }
     
     fetch(intervalsUrl)
+      
       .then(response => response.json())
       .then(data => {
+        console.log("fetching intervals data");
         if (data) {
           setLastDateIntervals(data.date);
           setIntervalData(data);
+          console.log(intervalData);
         }
       });
   };
 
   const fetchStintsData = () => {
-    let stintsUrl = `https://corsproxy.io/?https://api.openf1.org/v1/stints?session_key=latest&driver_number=${selectedDriverNumber}`;
+    let stintsUrl = `https://api.openf1.org/v1/stints?session_key=latest&driver_number=${selectedDriverNumber}`;
 
     fetch(stintsUrl)
       .then(response => response.json())

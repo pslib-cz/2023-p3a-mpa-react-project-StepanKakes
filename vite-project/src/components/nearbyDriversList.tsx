@@ -34,14 +34,14 @@ const NearbyDriversList = () => {
     if (intervalInfo) {
       const intervalValue = intervalInfo.interval;
       if (intervalValue === null) {
-        intervalStyle = { backgroundColor: 'yellow' };
+        intervalStyle = { backgroundColor: 'yellow' , borderRadius: '1.25em'};
       } 
       else if (intervalValue < 1.0) {
-        intervalStyle = { backgroundColor: 'green' };
+        intervalStyle = { backgroundColor: 'green', borderRadius: '1.25em' };
       } else if (intervalValue > 1.0 && intervalValue <= 5) {
-        intervalStyle = { backgroundColor: 'gray' };
+        intervalStyle = { backgroundColor: 'gray' , borderRadius: '1.25em'};
       } else if (intervalValue > 5) {
-        intervalStyle = { backgroundColor: 'red' };
+        intervalStyle = { backgroundColor: 'red' , borderRadius: '1.25em'};
       }
     }
     return (
@@ -49,7 +49,7 @@ const NearbyDriversList = () => {
         <td className={styles['position']}>{position.position}</td>
         <td>{driverDetail?.name_acronym || 'Unknown'}</td>
         <td>{intervalInfo?.gap_to_leader || 'N/A'}</td>
-        <td style={intervalStyle}>{intervalInfo?.interval || 'N/A'}</td>
+        <td style={intervalStyle} className={styles["interval"]}>{intervalInfo?.interval || 'N/A'}</td>
         
       </tr>
     );

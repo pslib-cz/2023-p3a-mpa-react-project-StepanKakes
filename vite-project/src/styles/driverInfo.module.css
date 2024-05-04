@@ -135,4 +135,16 @@
 
 .driver-stats-container{
     margin-left: 5em;
+    background-color: rgba(0, 0,0, .2);
+    backdrop-filter: blur(26px);
+    height: fit-content;
+    border-radius: 10px;
+    border: 2px solid #3D3D3D;
+    padding: .75em 1.5em;
+}
+
+.cirle-1{
+    width: 62.5em;
+    height: 58em;   
+    filter: blur(110px);
 }

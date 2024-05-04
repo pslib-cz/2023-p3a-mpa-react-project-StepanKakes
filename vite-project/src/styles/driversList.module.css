@@ -29,16 +29,20 @@
 }
 
 .driver{
-    display: flex;
+  align-items: center;
+    display: grid;
+    grid-template-columns: 2em 1fr auto;
     list-style-type: none;
-    box-shadow: 0 0 0 2px white; 
-    margin: 1em;
-    padding: .37em .75em;
-    border-radius: 15px;
+    box-shadow: 0 0 0 2px #3D3D3D; 
+    background-color: rgba(0, 0,0, .2);
+    backdrop-filter: blur(26px);
+    margin: .75em;
+    padding: .25em .5em;
+    border-radius: 10px;
     font-size: 1.25rem;
     font-family: 'f1';
     font-weight: 400;
-    gap: 1.5em;
+    gap: .5em;
     direction: ltr;
 }
 
@@ -54,4 +58,9 @@
 .driver__position{
     font-family: 'f1';
     font-weight: 800;
+    justify-self: start;
+}
+
+.driver__name{
+  justify-self: start;
 }

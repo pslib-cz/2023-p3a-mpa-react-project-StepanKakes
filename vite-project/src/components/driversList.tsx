@@ -1,12 +1,12 @@
 import React from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styles from '../styles/driversList.module.css';
 import { useDriversContext } from '../context/driverProvider';
-
+import { LiveDriverDetail } from '../types';
 
 const DriversList: React.FC = () => {
-  const { drivers, setSelectedDriver, setDrivers } = useDriversContext();
-
+  const { drivers, setSelectedDriver, setDrivers, selectedDriver, setSelectedDriverColor, selectedDriverColor } = useDriversContext();
+  const [LiveDriverDetail, setLiveDriverDetail] = useState<LiveDriverDetail[]>([]);
   /*
 const App: React.FC = () => {
   const [drivers, setDrivers] = useState<DriverRanking[]>([]);
@@ -51,26 +51,36 @@ const fetchDrivers = () => {
     .catch(error => console.error('Error fetching drivers:', error));
 };
 
-const handleDriverClick = (driverId: number) => {
-  fetch(`https://v1.formula-1.api-sports.io/drivers?id=${driverId}`, {
-    headers: {
-      'x-rapidapi-host': 'v1.formula-1.api-sports.io',
-      'x-rapidapi-key': '430dc0b9be573baf65e915b9235b347f', // Vložte svůj API klíč
-    },
-  })
-    .then(response => response.json())
-    .then(data => setSelectedDriver(data.response[0]))
-    .catch(error => console.error('Error fetching driver details:', error));
+const handleDriverClick = async (driverId: number) => {
+  try {
+    const response = await fetch(`https://v1.formula-1.api-sports.io/drivers?id=${driverId}`, {
+      headers: {
+        'x-rapidapi-host': 'v1.formula-1.api-sports.io',
+        'x-rapidapi-key': '430dc0b9be573baf65e915b9235b347f', // Vložte svůj API klíč
+      },
+    });
+    const data = await response.json();
+    setSelectedDriver(data.response[0]);
+
+    const driverDetailsResponse = await fetch(`https://api.openf1.org/v1/drivers?session_key=latest${data.response[0].number}`);
+    const driverDetailsData = await driverDetailsResponse.json();
+    setLiveDriverDetail(driverDetailsData);
+    setSelectedDriverColor(driverDetailsData?.team_colour);
+  } catch (error) {
+    console.error('Error fetching driver details:', error);
+  }
 };
 
 
   return (
+    
     <div>
       <ul className={styles['drivers-list']}>
         {drivers.map(driver => (
           <li className={styles.driver} key={driver.driver.id} onClick={() => handleDriverClick(driver.driver.id)}>
             <p className={styles['driver__position']}>{String(driver.position)}</p>
             <p className={styles['driver__name']}>{driver.driver.name}</p>
+            <p className={styles['driver__points']}>{driver.points}pts</p>
           </li>
         ))}
       </ul>

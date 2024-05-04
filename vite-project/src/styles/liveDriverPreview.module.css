@@ -1,24 +1,41 @@
 .driver-image{
-    width: 230px;
-    height: 230px;
+    width: 200px;
+    height: 200px;
     z-index: 2;
     position: absolute;
-    left: 5em;
+    left: 4em;
+    top: 2em;
 }
 
 .ldp-container{
+    width: 230px;
+    height: 230px;
     background-color: aquamarine;
     border-radius: 50%;
     position: relative;
+    z-index: 6;
+    overflow: hidden;
+    background-color: rgba(0, 0,0, .2);
+    backdrop-filter: blur(26px);
+    border: 2px solid #3D3D3D;
+    margin: 0 5em;
 }
 
 .driver-number-image{
     position: absolute;
-    left: 1em;
-    top: 5em;
-    width: 15em;
+    left: 0;
+    top: 4em;
+    width: 10em;
     z-index: 1;
 }
 .driver-name{
     position: absolute;
+    z-index: 5;
+    bottom: 1em;
+    left: 1em;
+    text-shadow:
+    3px 3px 0 #000,
+    -3px 3px 0 #000,
+    -3px -3px 0 #000,
+    3px -3px 0 #000;
 }

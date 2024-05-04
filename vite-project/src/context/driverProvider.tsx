@@ -13,11 +13,15 @@ export const SelectedDriverContext = React.createContext<SelectedDriverContextPr
 });
 
 export const DriversContext = createContext<{
+  selectedDriverColor: string | null;
+  setSelectedDriverColor: React.Dispatch<React.SetStateAction<string | null>>;
   drivers: DriverRanking[];
   setDrivers: React.Dispatch<React.SetStateAction<DriverRanking[]>>;
   selectedDriver: DriverDetail | null;
   setSelectedDriver: React.Dispatch<React.SetStateAction<DriverDetail | null>>;
 }>({
+  selectedDriverColor: null,
+  setSelectedDriverColor: () => {},
   drivers: [],
   setDrivers: () => {},
   selectedDriver: null,

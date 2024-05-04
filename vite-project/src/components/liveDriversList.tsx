@@ -22,7 +22,7 @@ return (
           <p className={styles['driver__position']}>{position.position}</p>
           <img className={styles['driver__team-image']} src={imageUrl} alt="team-logo" />
           <p className={styles['driver__name']}>{driverDetail?.full_name}</p>
-          <p className={styles['driver__interval']}>+2.321{intervalInfo?.interval}</p>
+          <p className={styles['driver__interval']}>+{intervalInfo?.interval}</p>
         </li>
       );
     })}

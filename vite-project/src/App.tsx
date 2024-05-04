@@ -13,7 +13,7 @@ export const App: React.FC = () => {
   const [drivers, setDrivers] = useState<DriverRanking[]>([]);
   const [selectedDriver, setSelectedDriver] = useState<DriverDetail | null>(null);
   const [selectedDriverNumber, setSelectedDriverNumber] = useState<number | null>(null);
-
+  const [selectedDriverColor, setSelectedDriverColor] = useState<string | null>(null);
   const [selectedTab, setSelectedTab] = useState('live');
 
   return (
@@ -32,7 +32,7 @@ export const App: React.FC = () => {
           </SelectedDriverContext.Provider>
         )}
         {selectedTab === 'drivers' && (
-          <DriversContext.Provider value={{ selectedDriver, setSelectedDriver, drivers, setDrivers }}>
+          <DriversContext.Provider value={{ selectedDriver, setSelectedDriver, drivers, setDrivers, selectedDriverColor, setSelectedDriverColor }}>
           <div className="container">
             <DriversList/>
             <DriverInfo/>
