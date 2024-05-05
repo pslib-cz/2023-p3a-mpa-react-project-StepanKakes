@@ -88,8 +88,6 @@ const DriverInfo: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className={styles['circle-1']} style={{ background: ` linear-gradient(#${selectedDriverColor} 0%, black 100%)` }}></div>
-          <div className={styles['circle-2']} style={{ background: ` linear-gradient(#${selectedDriverColor} 0%, black 100%)` }}></div>
           </>
   );
 };

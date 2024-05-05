@@ -60,12 +60,8 @@ const handleDriverClick = async (driverId: number) => {
       },
     });
     const data = await response.json();
+    console.log(data);
     setSelectedDriver(data.response[0]);
-
-    const driverDetailsResponse = await fetch(`https://api.openf1.org/v1/drivers?session_key=latest${data.response[0].number}`);
-    const driverDetailsData = await driverDetailsResponse.json();
-    setLiveDriverDetail(driverDetailsData);
-    setSelectedDriverColor(driverDetailsData?.team_colour);
   } catch (error) {
     console.error('Error fetching driver details:', error);
   }

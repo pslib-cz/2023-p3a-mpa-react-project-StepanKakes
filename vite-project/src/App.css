@@ -1,5 +1,6 @@
 .container{
   display: flex;
+
 }
 
 td{
@@ -17,7 +18,7 @@ th{
   font-size: 0.625em;
   font-weight: 400;
   color: white;
-  padding: 0em;
+  padding: 0em; 
 
   white-space: nowrap;
 }
@@ -34,4 +35,57 @@ thead tr::after{
   background-color: white;
   left: 0;
   top: 15px;
+}
+
+
+.circle-1{
+  width: 56.25em;
+  height: 56.25em;   
+  border-radius: 50%;
+  filter: blur(110px);
+  background-repeat:no-repeat;
+  z-index: -1;
+}
+
+.circle-texture, .circle-1, .circle-2{
+  grid-row: 1;
+  grid-column: 1;
+}
+
+
+.circle-2{
+  width: 56.25em;
+  height: 56.25em;   
+  border-radius: 50%;
+  filter: blur(110px);
+  background-repeat:no-repeat;
+  z-index: -1;
+}
+
+
+
+.circle-container{
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  display: grid;
+  z-index: -1;
+  position: absolute;
+
+}
+
+.circle-right{
+  right: -20em;
+  bottom: -25em;
+  rotate: 125deg;
+}
+
+.circle-left{
+  left: -25em;
+  top: -15em;
+}
+
+body { /* Ensure it's positioned to act as a boundary */
+  overflow: hidden;   /* Hide anything that overflows this container */
 }

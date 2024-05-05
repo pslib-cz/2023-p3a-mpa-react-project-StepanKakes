@@ -160,7 +160,7 @@ export const DriverDataProvider: React.FC<PropsWithChildren> = ({ children }) =>
         setDriverPositions(latestData);
         console.log(latestData);
   
-        const driverDetailsResponse = await fetch('https://api.openf1.org/v1/drivers?session_key=latest');
+        const driverDetailsResponse = await fetch('https://corsproxy.io/?https://api.openf1.org/v1/drivers?session_key=latest');
         const driverDetailsData = await driverDetailsResponse.json();
         setDriverDetails(driverDetailsData);
       } catch (error) {
