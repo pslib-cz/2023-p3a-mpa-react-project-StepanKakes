@@ -1,3 +1,54 @@
+//API Races
+interface Location {
+  country: string;
+  city: string;
+}
+
+interface Competition {
+  id: number;
+  name: string;
+  location: Location;
+}
+
+interface Circuit {
+  id: number;
+  name: string;
+  image: string;
+}
+
+interface Driver {
+  id: number | null;
+}
+
+interface FastestLap {
+  driver: Driver;
+  time: string | null;
+}
+
+interface Laps {
+  current: number | null;
+  total: number | null;
+}
+
+export interface Race {
+  id: number;
+  competition: Competition;
+  circuit: Circuit;
+  season: number;
+  type: string;
+  laps: Laps;
+  fastest_lap: FastestLap;
+  distance: string | null;
+  timezone: string;
+  date: string;
+  weather: string | null;
+  status: string;
+}
+
+export type Races = Race[];
+
+//API Races end
+
 export interface DriverRanking {
   position: number;
   driver: {
@@ -71,7 +122,17 @@ export interface LiveDriverDetail {
   team_colour: string;
   team_name: string;
 }
-
+/*
+export type Location = {
+  date: string;
+  driver_number: number;
+  meeting_key: number;
+  session_key: number;
+  x: number;
+  y: number;
+  z: number;
+};
+*/
 export type StintData = {
   compound: string;
   driver_number: number;

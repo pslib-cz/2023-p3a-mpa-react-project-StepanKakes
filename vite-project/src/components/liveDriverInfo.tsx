@@ -6,6 +6,7 @@ import LapTime from './lapTime';
 import NearbyDriversList from './nearbyDriversList';
 import StintsTable from './stintsTable';
 import LiveDriverPreview from './liveDriverPreview';
+import LiveLocation from './liveLocation';
 const LiveDriverInfo = () => {
 
   return (

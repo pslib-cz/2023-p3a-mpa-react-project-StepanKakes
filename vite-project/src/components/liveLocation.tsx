@@ -1,31 +1,17 @@
 import { useEffect, useState } from 'react';
-
+import { Location } from '../types';
+import styles from '../styles/liveLocation.module.css';
+import { useDriverDataContext } from '../context/driverDataContext';
 const LiveLocation = () => {
-  const [locations, setLocations] = useState([]);
-
-  useEffect(() => {
-    const fetchLocations = async () => {
-      const response = await fetch('https://api.openf1.org/v1/location');
-      const data = await response.json();
-      setLocations(data);
-    };
-
-    fetchLocations();
-    const intervalId = setInterval(fetchLocations, 5000); // Fetch every 5 seconds
-
-    return () => clearInterval(intervalId); // Clean up on unmount
-  }, []);
+  const { locationData } = useDriverDataContext();
 
   return (
-    <svg width="500" height="500">
-      <circle cx="250" cy="250" r="200" stroke="black" strokeWidth="3" fill="transparent" />
-      {locations.map((index) => {
-        const angle = (locations.length) * 2 * Math.PI;
-        const x = 250 + 200 * Math.cos(angle);
-        const y = 250 + 200 * Math.sin(angle);
-        return <circle key={index} cx={x} cy={y} r="10" fill="red" />;
-      })}
-    </svg>
+    <div style={{ position: "relative"}}>
+    <img className={styles["map-img"]} src="./src/images/miami-track.svg" alt="" />
+    {locationData?.map((location, index) => (
+      <div key={index} style={{ position: "absolute", top: location.y/31 + 213, left: location.x/29.7 + 195, width: "10px", height: "10px", backgroundColor: "red", borderRadius: "50%"}}/>
+    ))}
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@
     display: grid;
     grid-template-areas: "laptime driverpreview driverpreview ."
                          "speedmeter brakebar throttlebar rpmmeter"
-                         "stintstable . . nearbydriverslist";
+                         "stintstable livelocation livelocation nearbydriverslist";
     justify-items: center;
 }
 
@@ -37,4 +37,7 @@
 }
 .live-driver-info-container > div:nth-child(8) {
     grid-area: nearbydriverslist;
+}
+.live-driver-info-container > div:nth-child(9) {
+    grid-area: livelocation;
 }
