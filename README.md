@@ -3,6 +3,10 @@
 aplikace je funkční ale je nutné ještě dodělat/doladit pár funkcionalit a vylepšit styly a zlepšit responsibilitu
 
 
+https://github.com/pslib-cz/2023-p3a-mpa-react-project-StepanKakes/assets/91247524/d0e8bc83-e793-48b4-9e51-f739b319ff53
+
+
+
 ## Téma
 
 F1 Dashboard s live informacemi ze závodů, statistikami z této sezóny a informacemi o závodnících.
