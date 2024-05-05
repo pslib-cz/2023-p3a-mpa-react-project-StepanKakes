@@ -1,5 +1,5 @@
 # F1 stats dashboard
-##Aplikace Není ještě hotová
+## Aplikace ještě není hotová
 je nutné ještě dodělat/doladit pár funkcionalit a vylepšit styly a zlepšit responsibilitu
 
 
