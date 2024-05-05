@@ -1,6 +1,6 @@
 # F1 stats dashboard
 ## Aplikace ještě není hotová
-je nutné ještě dodělat/doladit pár funkcionalit a vylepšit styly a zlepšit responsibilitu
+aplikace je funkční ale je nutné ještě dodělat/doladit pár funkcionalit a vylepšit styly a zlepšit responsibilitu
 
 
 ## Téma
