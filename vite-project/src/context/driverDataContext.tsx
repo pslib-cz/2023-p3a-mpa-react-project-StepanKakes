@@ -39,6 +39,22 @@ export const DriverDataProvider: React.FC<PropsWithChildren> = ({ children }) =>
   const [nextRace, setNextRace] = useState<Race | null>(null);
  /* const [lastDateLocations, setLastDateLocations] = useState<string | null>(null);
   const [locationData, setLocationlData] = useState<Location[]>([]);*/
+
+  const fetchRacesData = () => {
+    fetch('https://v1.formula-1.api-sports.io/races?season=2024', {
+      headers: {
+        'x-rapidapi-host': 'v1.formula-1.api-sports.io',
+        'x-rapidapi-key': '430dc0b9be573baf65e915b9235b347f',
+      },
+    })
+      .then(response => response.json())
+      .then(data => {
+        setRacesData(data.response);
+        findNextRace(data.response);
+      })
+      .catch(error => console.error('Error fetching races:', error));
+  };
+
   useEffect(() => {
     fetchRacesData();
   }, []);
@@ -216,20 +232,7 @@ export const DriverDataProvider: React.FC<PropsWithChildren> = ({ children }) =>
       });
   };
 
-  const fetchRacesData = () => {
-    fetch('https://v1.formula-1.api-sports.io/races?season=2024', {
-      headers: {
-        'x-rapidapi-host': 'v1.formula-1.api-sports.io',
-        'x-rapidapi-key': '430dc0b9be573baf65e915b9235b347f',
-      },
-    })
-      .then(response => response.json())
-      .then(data => {
-        setRacesData(data.response);
-        findNextRace(data.response);
-      })
-      .catch(error => console.error('Error fetching races:', error));
-  };
+  
 
   const findNextRace = (races: Races) => {
     const now = new Date();

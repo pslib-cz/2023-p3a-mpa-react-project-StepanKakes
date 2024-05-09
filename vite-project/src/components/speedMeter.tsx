@@ -10,13 +10,30 @@ import Speedometer, {
 } from 'react-speedometer';
 
 import styles from './speedometer.module.css';
+import { useEffect, useState } from 'react';
 
 const SpeedMeter = () => {
   const { carData } = useDriverDataContext();
+  const [speedometerSize, setSpeedometerSize] = useState(300);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 1445) {
+        setSpeedometerSize(250);
+      } else {
+        setSpeedometerSize(300);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Call the function initially to set the size based on the current viewport width
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div className={styles['speedometer-container']}>
-      <Speedometer value={carData?.speed} fontFamily='f1' max={400}>
+      <Speedometer value={carData?.speed} fontFamily='f1' width={speedometerSize} max={400}>
         <Background />
         <Arc arcWidth={10} />
         <Needle baseOffset={-27} circleRadius={0} offset={18} color='#ff0000' />
@@ -30,8 +47,8 @@ const SpeedMeter = () => {
                 {...textProps}
                 fontSize={60}
                 fill="#fff"
-                x={250 / 2}
-                y={140}
+                x={300 / 2}
+                y={170}
                 textAnchor="middle"
                 fontFamily='f1'
               >
@@ -41,8 +58,8 @@ const SpeedMeter = () => {
                 {...textProps}
                 fontSize={20} 
                 fill="#fff"
-                x={250 / 2}
-                y={165} 
+                x={300 / 2}
+                y={15} 
                 textAnchor="middle"
                 fontFamily='f1'
               >
@@ -52,8 +69,8 @@ const SpeedMeter = () => {
                 {...textProps}
                 fontSize={24} 
                 fill="#fff"
-                x={250 / 2}
-                y={210} 
+                x={300 / 2}
+                y={240} 
                 textAnchor="middle"
                 fontFamily='f1'
               >

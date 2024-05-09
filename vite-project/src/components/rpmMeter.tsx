@@ -16,7 +16,7 @@ const RpmMeter = () => {
   const formattedRpm = carData?.rpm?.toLocaleString() || '';
   return (
     <div className={styles['speedometer-container']}>
-      <Speedometer value={carData?.rpm} fontFamily='f1' max={15000}>
+      <Speedometer value={carData?.rpm} fontFamily='f1' width={300} max={15000}>
   <Background />
   <Arc arcWidth={10} />
   <Needle baseOffset={-27} circleRadius={0} offset={18} color='#ff0000' />
@@ -25,12 +25,12 @@ const RpmMeter = () => {
   <Progress color='rgba(39, 178, 245, 0.60)' arcWidth={10} />
   <Indicator>
     {() => (
-      <g transform="rotate(125, 125, 125)"> {/* Add this line */}
+      <g transform="rotate(125, 150, 150)"> {/* Add this line */}
         <text
           fontSize={36}
           fill="#fff"
-          x={250 / 2}
-          y={130}
+          x={150}
+          y={175}
           textAnchor="middle"
           fontFamily='f1'
         >
@@ -39,8 +39,8 @@ const RpmMeter = () => {
         <text
           fontSize={20} 
           fill="#fff"
-          x={250 / 2}
-          y={155} 
+          x={150}
+          y={195} 
           textAnchor="middle"
           fontFamily='f1'
         >

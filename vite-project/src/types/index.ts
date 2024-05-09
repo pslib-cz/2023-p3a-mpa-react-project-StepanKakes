@@ -167,10 +167,14 @@ export interface LapData {
   st_speed: number;
   date_start: string;
   lap_duration: number;
+  segments_sector_1: number[];
+  segments_sector_2: number[];
+  segments_sector_3: number[];
+  lap_number: number;
   duration_sector_1: number;
   duration_sector_2: number;
   duration_sector_3: number;
-  lap_number: number;
+  is_pit_out_lap: boolean;
 }
 
 export interface IntervalData {

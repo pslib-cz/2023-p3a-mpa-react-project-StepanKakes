@@ -11,9 +11,6 @@ const LiveView = () => {
   const { selectedDriverNumber } = useContext(SelectedDriverContext);
   const [showList, setShowList] = useState(true);
 
-  const toggleList = () => {
-    setShowList(!showList);
-  };
 
   return (
     <>

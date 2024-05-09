@@ -49,7 +49,7 @@ const NearbyDriversList = () => {
         <td className={styles['position']}>{position.position}</td>
         <td>{driverDetail?.name_acronym || 'Unknown'}</td>
         <td>{intervalInfo?.gap_to_leader || 'N/A'}</td>
-        <td style={intervalStyle} className={styles["interval"]}>{position.position === 1 ? 'Int' : '+' + intervalInfo?.interval || 'N/A'}</td>
+        <td style={intervalStyle} className={styles["interval"]}>{position.position === 1 ? 'Int' : '+' + (Number(intervalInfo?.interval)?.toFixed(3) ?? 'N/A')}</td>
         
       </tr>
     );

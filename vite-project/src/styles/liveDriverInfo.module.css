@@ -1,9 +1,13 @@
-.live-driver-info-container{
+.live-driver-info-container {
     display: grid;
-    grid-template-areas: "laptime driverpreview driverpreview ."
-                         "speedmeter brakebar throttlebar rpmmeter"
-                         "stintstable livelocation livelocation nearbydriverslist";
+    grid-template-areas: 
+        "laptime driverpreview driverpreview ."
+        "speedmeter brakebar throttlebar rpmmeter"
+        "stintstable livelocation livelocation nearbydriverslist";
     justify-items: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 70%;
 }
 
 .live-driver-info-container > div:nth-child(1) {
@@ -40,4 +44,38 @@
 }
 .live-driver-info-container > div:nth-child(9) {
     grid-area: livelocation;
+}
+/* Responsive layout for viewports up to 768px wide */
+@media (max-width: 768px) {
+    .live-driver-info-container {
+        grid-template-areas: 
+            "laptime laptime driverpreview driverpreview"
+            "speedmeter speedmeter brakebar brakebar"
+            "throttlebar throttlebar rpmmeter rpmmeter"
+            "stintstable stintstable livelocation livelocation"
+            "nearbydriverslist nearbydriverslist nearbydriverslist nearbydriverslist";
+    }
+}
+
+@media (max-width: 1665px) {
+    .live-driver-info-container {
+        width: auto;
+    }
+}
+
+
+/* Responsive layout for viewports up to 480px wide */
+@media (max-width: 480px) {
+    .live-driver-info-container {
+        grid-template-areas: 
+            "laptime laptime laptime laptime"
+            "driverpreview driverpreview driverpreview driverpreview"
+            "speedmeter speedmeter speedmeter speedmeter"
+            "brakebar brakebar brakebar brakebar"
+            "throttlebar throttlebar throttlebar throttlebar"
+            "rpmmeter rpmmeter rpmmeter rpmmeter"
+            "stintstable stintstable stintstable stintstable"
+            "livelocation livelocation livelocation livelocation"
+            "nearbydriverslist nearbydriverslist nearbydriverslist nearbydriverslist";
+    }
 }

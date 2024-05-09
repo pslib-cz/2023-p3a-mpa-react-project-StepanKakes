@@ -18,6 +18,7 @@
     max-height: 780px; /* Adjust this value based on your requirements */
     overflow-y: auto;
     direction: rtl;
+    padding: 0;
 }
 
 .drivers-list::-webkit-scrollbar {
@@ -44,7 +45,7 @@
 .driver{
   align-items: center;
     display: grid;
-    grid-template-columns: 2em 2em 1fr 4em;
+    grid-template-columns: 2em auto 1fr 4em;
     list-style-type: none;
     box-shadow: 0 0 0 2px #3D3D3D; 
     background-color: rgba(0, 0,0, .2);
@@ -87,4 +88,12 @@
   width: 2em;
   grid-column: 2;
   justify-self: start;
+}
+
+.drivers-list-container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

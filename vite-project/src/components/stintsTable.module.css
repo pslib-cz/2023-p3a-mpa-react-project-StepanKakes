@@ -37,3 +37,16 @@
     border-radius: 1.25em;
     padding: 0.25em 0.5em;
 }
+
+@media (max-width: 1450px) {
+    .stints-table-container{
+        width: 15.85em;
+    }
+    .stints-table-container table{
+        border-spacing: .25em .5em;
+    }
+    .tyre-age{
+        font-size: .75rem;
+        padding: 0;
+    }
+}
