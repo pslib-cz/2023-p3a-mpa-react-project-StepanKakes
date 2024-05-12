@@ -93,7 +93,7 @@ export const DriverDataProvider: React.FC<PropsWithChildren> = ({ children }) =>
           if (lastDate) {
             url += `&date%3E=${lastDate}`;
           }
-    
+          console.log('url:', url);
           const positionResponse = await fetch(url);
           const positionData = await positionResponse.json();
     

@@ -63,6 +63,12 @@
     }
 }
 
+@media (max-width: 1330px) {
+    .live-driver-info-container {
+        grid-template-columns: 1fr 10vw 10vw 1fr;
+    }
+}
+
 
 /* Responsive layout for viewports up to 480px wide */
 @media (max-width: 480px) {

@@ -47,8 +47,8 @@ const SpeedMeter = () => {
                 {...textProps}
                 fontSize={60}
                 fill="#fff"
-                x={300 / 2}
-                y={170}
+                x={speedometerSize / 2}
+                y={speedometerSize * 0.57}
                 textAnchor="middle"
                 fontFamily='f1'
               >
@@ -58,8 +58,8 @@ const SpeedMeter = () => {
                 {...textProps}
                 fontSize={20} 
                 fill="#fff"
-                x={300 / 2}
-                y={15} 
+                x={speedometerSize / 2}
+                y={speedometerSize * 0.65}
                 textAnchor="middle"
                 fontFamily='f1'
               >
@@ -69,8 +69,8 @@ const SpeedMeter = () => {
                 {...textProps}
                 fontSize={24} 
                 fill="#fff"
-                x={300 / 2}
-                y={240} 
+                x={speedometerSize / 2}
+                y={speedometerSize * 0.8}
                 textAnchor="middle"
                 fontFamily='f1'
               >

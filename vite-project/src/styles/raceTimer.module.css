@@ -1,0 +1,30 @@
+.timer-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #006444;
+    border-radius: 15px;
+    padding: 1em 1em;
+  }
+  
+  .timer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 3.5em;
+    border-right: 1px solid white; /* Add this line */
+    padding: 0 1em;
+}
+
+.timer-item:last-child {
+  border-right: none; /* Add this line */
+}
+  .timer-number {
+    font-size: 2em;
+    font-weight: 800;
+  }
+  
+  .timer-label {
+    font-size: .85em;
+    opacity: .9;
+    text-transform: uppercase;
+  }

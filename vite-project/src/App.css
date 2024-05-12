@@ -87,5 +87,23 @@ thead tr::after{
 }
 
 body { /* Ensure it's positioned to act as a boundary */
-  overflow: hidden;   /* Hide anything that overflows this container */
+  overflow-x: hidden;   /* Hide anything that overflows this container */
+}
+
+header{
+  font-size: 1.25em;
+  margin: 0 2em;
+}
+
+header a{
+  color: white;
+  text-decoration: none;
+  margin-left: 1em;
+  transition: color 0.5s;
+}
+
+
+header a:hover{
+  cursor: pointer;
+  color: #7c7c7c;
 }

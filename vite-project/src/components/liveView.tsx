@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { SelectedDriverContext } from "../context/driverProvider";
 
 const LiveView = () => {
-  const { nextRace } = useDriverDataContext();
+  const { nextRace, driverPositions } = useDriverDataContext();
   const { selectedDriverNumber } = useContext(SelectedDriverContext);
   const [showList, setShowList] = useState(true);
 
@@ -16,6 +16,7 @@ const LiveView = () => {
     <>
       {nextRace?.status !== "Live" ? (
         <>
+        
           {showList && <LiveDriversList />}
           {selectedDriverNumber !== null && <LiveDriverInfo />}
         </>
