@@ -93,6 +93,7 @@ export const DriverDataProvider: React.FC<PropsWithChildren> = ({ children }) =>
           if (lastDate) {
             url += `&date%3E=${lastDate}`;
           }
+          console.log("driver-positions"+driverPositions);
           console.log('url:', url);
           const positionResponse = await fetch(url);
           const positionData = await positionResponse.json();
@@ -110,7 +111,7 @@ export const DriverDataProvider: React.FC<PropsWithChildren> = ({ children }) =>
               acc.push(current);
             }
             return acc;
-          }, currentPositions); // Use currentPositions as initial value
+          }, currentPositions);
     
           if (latestData.length > 0) {
             const latestDate = latestData[latestData.length - 1].date;
@@ -119,7 +120,7 @@ export const DriverDataProvider: React.FC<PropsWithChildren> = ({ children }) =>
     
           latestData.sort((a: DriverPosition, b: DriverPosition) => a.position - b.position);
           setDriverPositions(latestData);
-          console.log(latestData);
+          console.log("driver-positions"+driverPositions);
     
           const driverDetailsResponse = await fetch('https://corsproxy.io/?https://api.openf1.org/v1/drivers?session_key=latest');
           const driverDetailsData = await driverDetailsResponse.json();

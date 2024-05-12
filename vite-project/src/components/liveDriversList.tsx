@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { SelectedDriverContext } from '../context/driverProvider';
-import { LiveDriverDetail, DriverPosition } from '../types';
+import { LiveDriverDetail } from '../types';
 import styles from '../styles/liveDriversList.module.css';
 import { useDriverDataContext } from '../context/driverDataContext';
 const LiveDriversList = () => {
@@ -37,7 +37,7 @@ return (
               <img
                 src="./src/images/icons/mingcute_arrows-left-line.svg"
                 alt="Switch View"
-                style={showLogo ? { transform: 'scaleY(-1)' } : {}} />
+                style={!showLogo ? { transform: 'scaleX(-1)' } : {}} />
             </button>
           )}
           <label htmlFor="toggle" className={styles['toggle-label']}>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { useContext } from 'react';
 import { useDriverDataContext } from '../context/driverDataContext';
 import { SelectedDriverContext } from '../context/driverProvider';

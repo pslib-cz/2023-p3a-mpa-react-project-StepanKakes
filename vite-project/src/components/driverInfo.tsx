@@ -4,7 +4,7 @@ import { useDriversContext } from '../context/driverProvider';
 
 
 const DriverInfo: React.FC = () => {
-  const { selectedDriver, drivers, selectedDriverColor } = useDriversContext();
+  const { selectedDriver, drivers } = useDriversContext();
   if (!selectedDriver) {
     return <div>No driver selected</div>;
   }

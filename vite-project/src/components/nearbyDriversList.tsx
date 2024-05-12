@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { SelectedDriverContext } from '../context/driverProvider';
-import { DriverPosition, LiveDriverDetail, IntervalData } from '../types';
+import {  LiveDriverDetail } from '../types';
 import styles from '../styles/nearbyDriversList.module.css';
 import { useDriverDataContext } from '../context/driverDataContext';
 

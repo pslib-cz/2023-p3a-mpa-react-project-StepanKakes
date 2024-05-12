@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { LiveDriverDetail } from '../types';
 import { SelectedDriverContext } from '../context/driverProvider';
 import { useDriverDataContext } from '../context/driverDataContext';

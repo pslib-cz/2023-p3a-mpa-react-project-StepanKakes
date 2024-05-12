@@ -146,13 +146,11 @@
 
 
 
-.switch-button:focus-visible {
-  border: none;
-  background: none;
-  padding: 0;
+.switch-button:focus{
+  outline: none;
 }
 
-label {
+label { 
   pointer-events: none;
 }
 label .input {

@@ -1,3 +1,4 @@
+/*
 import { useEffect, useState } from 'react';
 import { Location } from '../types';
 import styles from '../styles/liveLocation.module.css';
@@ -16,3 +17,4 @@ const LiveLocation = () => {
 };
 
 export default LiveLocation;
+*/
