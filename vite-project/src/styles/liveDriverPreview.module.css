@@ -39,3 +39,23 @@
     -3px -3px 0 #000,
     3px -3px 0 #000;
 }
+
+@media (max-width: 1450px) {
+    .ldp-container{
+        width: 200px;
+        height: 200px;
+    }
+    .driver-number-image{
+        width: 8em;
+    }
+    .driver-image{
+        width: 170px;
+        height: 170px;
+    }
+    .driver-name{
+        bottom: 0.75em;
+        left: 1em;
+        font-size: 1.25rem;
+    }
+
+}

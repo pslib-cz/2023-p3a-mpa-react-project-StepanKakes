@@ -47,7 +47,7 @@
 }
 
 .driver:hover{
-    box-shadow: 0 0 0 4px white;
+    box-shadow: 0 0 0 4px #3D3D3D;
     cursor: pointer;
 }
 .driver p{

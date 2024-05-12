@@ -3,6 +3,7 @@
 
 }
 
+
 td{
   text-align: center;
   font-size: 1.25em;
@@ -92,7 +93,7 @@ body { /* Ensure it's positioned to act as a boundary */
 
 header{
   font-size: 1.25em;
-  margin: 0 2em;
+  margin: 1em 2em;
 }
 
 header a{
@@ -106,4 +107,12 @@ header a{
 header a:hover{
   cursor: pointer;
   color: #7c7c7c;
+}
+
+@media (max-width: 1120px) {
+  .container{
+    flex-direction: column;
+    align-items: center;
+  }
+
 }

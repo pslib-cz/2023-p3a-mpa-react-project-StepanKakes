@@ -14,10 +14,10 @@
   }
 
 .drivers-list{
-    align-items: center;
+  margin: 0;
     max-height: 80vh;
     overflow-y: auto;
-    direction: rtl;
+    direction: rtl; 
     padding: 0;
 }
 
@@ -59,6 +59,13 @@
     gap: .5em;
     direction: ltr;
 }
+.driver:first-child {
+  margin-top: 4px; /* Remove top margin from the first driver */
+}
+
+.driver:last-child {
+  margin-bottom: 4px; /* Remove bottom margin from the last driver */
+}
 
 .driver:hover{
     box-shadow: 0 0 0 4px #3D3D3D;
@@ -91,13 +98,103 @@
 }
 
 .drivers-list-container{
-  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-@media (max-width: 1135px) {
-    
+@media (max-width: 1120px) {
+  .drivers-list{
+    display: flex;
+    width: 80vw;
+    direction: ltr;
+}
+.drivers-list-container{
+  height: 100%;
+  padding: 0 1em;
+}
+.drivers-list::-webkit-scrollbar {
+  height: 8px;
+}
+.driver:first-child {
+  margin-top: .75em;
+  margin-left: 4px;
+}
+
+.driver:last-child {
+  margin-bottom: .75em;
+  margin-right: 4px;
+}
+}
+
+@media (max-width: 680px) {
+  .drivers-list{
+    width: 90vw;
+    direction: ltr;
+    margin-bottom: 2em;
+
+}
+  .driver{
+    margin: .75em .25em;
+  }
+}
+
+.switch-button {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+
+
+.switch-button:focus-visible {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+label {
+  pointer-events: none;
+}
+label .input {
+  display: none;
+}
+
+label .input:checked + .toggle-wrapper > .selector {
+  left: calc(100% - 1.2em );
+}
+
+label .toggle-wrapper {
+  position: relative;
+  width: 2em;
+  height: 1.25em;
+  background-color: #eaeaea;
+  border-radius: 999px;
+  margin: auto;
+  cursor: pointer;
+  pointer-events: all;
+}
+label .toggle-wrapper .selector {
+  width: 1.15em;
+  height: 1.15em;
+  position: absolute;
+  top: 50%;
+  left: .1em;
+  transform: translateY(-50%);
+  background-color: #161616;
+  transition: left 0.25s ease;
+  border-radius: 50%;
+}
+
+
+.buttons-container{
+  width: calc(100% - 1.5em);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0.938em;
+}
+
+.buttons-container > :first-child {
+  margin-left: 8px;
 }

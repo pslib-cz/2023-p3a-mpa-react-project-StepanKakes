@@ -28,7 +28,12 @@ const days = Math.floor((timeLeft || 0) / (1000 * 60 * 60 * 24)).toString().padS
 
   return (
     <div className={styles['timer-container']}>
-  <div className={styles['timer-item']}>
+      <div className={styles['timer-header']}>
+      <h2><strong>{nextRace?.competition.name}</strong></h2>
+      <h3>{nextRace?.type}</h3>
+      </div>
+      <div className={styles['time-container']}>
+      <div className={styles['timer-item']}>
     <span className={styles['timer-number']}>{days}</span>
     <span className={styles['timer-label']}>days</span>
   </div>
@@ -45,6 +50,8 @@ const days = Math.floor((timeLeft || 0) / (1000 * 60 * 60 * 24)).toString().padS
     <span className={styles['timer-label']}>sec</span>
   </div>
 </div>
+      </div>
+  
   );
 };
 export default RaceTimer;
