@@ -8,8 +8,6 @@ import Speedometer, {
   Indicator,
   DangerPath,
 } from 'react-speedometer';
-
-import styles from './speedometer.module.css';
 import { useEffect, useState } from 'react';
 
 const SpeedMeter = () => {

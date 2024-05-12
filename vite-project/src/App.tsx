@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import LiveView from './components/liveView';
 import { DriversContext, SelectedDriverContext } from './context/driverProvider';
-import { DriverDataProvider, useDriverDataContext } from './context/driverDataContext';
+import { DriverDataProvider } from './context/driverDataContext';
 import DriverInfo from './components/driverInfo';
 import DriversList from './components/driversList';
 import { DriverDetail, DriverRanking } from './types';

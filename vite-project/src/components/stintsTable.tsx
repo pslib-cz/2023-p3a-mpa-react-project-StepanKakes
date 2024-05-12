@@ -1,4 +1,3 @@
-import React from 'react';
 import { useDriverDataContext } from '../context/driverDataContext';
 import styles from '../styles/stintsTable.module.css';
 const StintsTable = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import styles from '../styles/driversList.module.css';
 import { useDriversContext } from '../context/driverProvider';
 

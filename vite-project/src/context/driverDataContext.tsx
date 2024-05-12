@@ -35,7 +35,7 @@ export const DriverDataProvider: React.FC<PropsWithChildren> = ({ children }) =>
   const [driverPositions, setDriverPositions] = useState<DriverPosition[]>([]);
   const [driverDetails, setDriverDetails] = useState<LiveDriverDetail[]>([]);
   const [lastDate, setLastDate] = useState<string | null>(null);
-  const [racesData, setRacesData] = useState<Races>([]);
+  const [setRacesData] = useState<Races>([]);
   const [nextRace, setNextRace] = useState<Race | null>(null);
  /* const [lastDateLocations, setLastDateLocations] = useState<string | null>(null);
   const [locationData, setLocationlData] = useState<Location[]>([]);*/
