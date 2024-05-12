@@ -14,7 +14,7 @@ const LiveView = () => {
 
   return (
     <>
-      {nextRace?.status === "Live" ? (
+      {nextRace?.status !== "Live" ? (
         <>
         
           {showList && <LiveDriversList />}

@@ -20,22 +20,28 @@ export const App: React.FC = () => {
         <a onClick={() => setSelectedTab('live')}>Live</a>
         <a onClick={() => setSelectedTab('drivers')}>Drivers</a>
       </header>
-      <div className="container">
+      <div className="liveview-container">
         {selectedTab === 'live' && (
+          <>
           <SelectedDriverContext.Provider value={{ selectedDriverNumber, setSelectedDriverNumber }}>
             <DriverDataProvider>
                 <LiveView/>
             </DriverDataProvider>
           </SelectedDriverContext.Provider>
+          </>
         )}
+        </div>
+        <div className='drivers-container'>
         {selectedTab === 'drivers' && (
              <DriversContext.Provider value={{ selectedDriver, setSelectedDriver, drivers, setDrivers, selectedDriverColor, setSelectedDriverColor }}>
               <DriversList/>
               <DriverInfo/>
           </DriversContext.Provider>
         )}
+        </div>
         
-      </div>
+        
+      
     </>
   );
 };

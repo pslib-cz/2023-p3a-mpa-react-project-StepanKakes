@@ -48,8 +48,7 @@
     grid-template-columns: 2em auto 1fr 4em;
     list-style-type: none;
     box-shadow: 0 0 0 2px #3D3D3D; 
-    background-color: rgba(0, 0,0, .2);
-    backdrop-filter: blur(26px);
+    background: linear-gradient(90deg, rgba(23,23,23,1) 0%, rgba(35,35,35,1) 51%, rgba(23,23,23,1) 100%);
     margin: .75em;
     padding: .25em .5em;
     border-radius: 10px;

@@ -41,7 +41,7 @@
     font-weight: 800;
     padding: 0;
     margin: 0;
-    font-size: 3.25rem;
+    font-size: 3.25em;
     line-height: 3.25rem;
     -webkit-text-stroke: 2px var(--bg-color);
 }
@@ -77,29 +77,32 @@
 
 .driver-image {
     position: relative;
-    z-index: 9;
+    z-index: 1;
     width: 320px;
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, transparent 100%); /* Přidáno */
 }
 
 
-.driver-career-info, .driver-races-info{
+.driver-info{
     font-family: 'f1';
-    display: flex;
-    gap: 1.5em;
+    display: grid;
+    grid-template-areas: 'pos pts age .'
+    'gps podiums hrf wc';
+    z-index: 99;
+    position: relative;
+    row-gap: 1em;
 }
 
-.driver-career-info div p, .driver-races-info div p{
+.driver-info div p{
     margin: 0;
     padding:0;
 }
 
-.driver-career-info div > p:first-child{
-    font-weight: 800;
-    font-size: 2.75rem;
-    line-height: 2.75rem;
+.driver-info div > .info-p--big{
+    font-size: 2.75rem !important;
+    line-height: 2.75rem !important;
 }
-.driver-races-info div > p:first-child{
+.driver-info div > p:first-child{
     font-weight: 800;
     font-size: 2rem;
     line-height: 2rem;
@@ -136,13 +139,57 @@
 
 .driver-stats-container{
     position: relative;
-    margin-left: 5em;
-    background-color: rgba(0, 0,0, .2);
-    backdrop-filter: blur(26px);
+    margin: 2px 0 0 0;
+    background: linear-gradient(90deg, rgba(23,23,23,1) 0%, rgba(35,35,35,1) 51%, rgba(23,23,23,1) 100%);
     height: fit-content;
     border-radius: 10px;
     border: 2px solid #3D3D3D;
     padding: .75em 1.5em;
     width: 40em;
+}
+
+@media (max-width: 1135px) {
+    .driver-stats-container{
+        font-size: .75rem;
+    }
+    .image-container{
+        right: 0;
+    }
+
+    .driver-number-image{
+        width: 200px;
+        left: -6em;
+    }
+    
+    .driver-image {
+        width: 250px;
+    }
+
+    
+}
+
+@media (max-width: 970px) {
+    .driver-stats-container{
+        font-size: .75rem;
+        width: fit-content;
+    }
+    .image-container{
+        left: 6em;
+    }
+    .driver-name-container{
+        margin: 14em 0 0 1em;
+    }
+    .driver-info div{
+        width: fit-content;
+    }
+
+    .driver-info{
+        grid-template-columns: fit-content(11.25em) fit-content(11.25em) fit-content(11.25em);
+        gap: 1.5em;
+        grid-template-areas: 
+        "pos pts age"
+        "gps podiums ."
+        "hrf wc .";
+    }
 }
 

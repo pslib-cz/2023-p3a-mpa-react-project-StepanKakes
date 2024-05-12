@@ -1,6 +1,13 @@
-.container{
+.liveview-container{
   display: flex;
 
+}
+
+.drivers-container{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 
@@ -40,12 +47,13 @@ thead tr::after{
 
 
 .circle-1{
-  width: 56.25em;
-  height: 56.25em;   
+  width: 45em;
+  height: 45em;   
   border-radius: 50%;
   filter: blur(110px);
   background-repeat:no-repeat;
   z-index: -1;
+  background: linear-gradient(90deg, rgba(225,6,0,0.5) 0%, rgba(66,0,255,1) 100%);
 }
 
 .circle-texture, .circle-1, .circle-2{
@@ -55,21 +63,22 @@ thead tr::after{
 
 
 .circle-2{
-  width: 56.25em;
-  height: 56.25em;   
+  width: 45em;
+  height: 45em;   
   border-radius: 50%;
   filter: blur(110px);
   background-repeat:no-repeat;
+  background: linear-gradient(90deg, rgba(53,31,31,1) 0%, rgba(66,0,255,1) 100%);
   z-index: -1;
 }
 
 
 
 .circle-container{
-  justify-content: center;
+  justify-items: center;
   align-items: center;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: fit-content(0);
+  grid-template-rows: fit-content(0);
   display: grid;
   z-index: -1;
   position: absolute;
@@ -110,9 +119,17 @@ header a:hover{
 }
 
 @media (max-width: 1120px) {
-  .container{
+  .liveview-container{
     flex-direction: column;
     align-items: center;
   }
 
 }
+
+@media (max-width: 765px) {
+  .drivers-container{
+      grid-template-columns: auto;
+      justify-items: center;
+      gap: 3em;
+  }
+} 

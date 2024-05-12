@@ -1,7 +1,6 @@
 .stints-table-container{
     width: 20.85em;
-    background-color: rgba(0, 0,0, .2);
-    backdrop-filter: blur(26px);
+    background: linear-gradient(90deg, rgba(23,23,23,1) 0%, rgba(35,35,35,1) 51%, rgba(23,23,23,1) 100%);
     height: fit-content;
     border-radius: 10px;
     border: 2px solid #3D3D3D;

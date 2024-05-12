@@ -54,40 +54,36 @@ const DriverInfo: React.FC = () => {
         </div>
       </div>
       <div className={styles['driver-info']}>
-          <div className={styles['driver-career-info']}>
-              <div>
-              {driverRanking && <p>#{driverRanking.position.toString().padStart(2, '0')}</p>}
+              <div style={{gridArea: 'pos'}}>
+              {driverRanking && <p className={styles['info-p--big']}>#{driverRanking.position.toString().padStart(2, '0')}</p>}
                 <p>POS</p>
               </div>
-              <div>
-                {driverRanking && <p>{driverRanking.points}</p>}
+              <div style={{gridArea: 'pts'}}>
+                {driverRanking && <p className={styles['info-p--big']}>{driverRanking.points}</p>}
                 <p>PTS</p>
               </div>
-              <div>
-                <p>{diffYears}</p>
+              <div style={{gridArea: 'age'}}>
+                <p className={styles['info-p--big']}>{diffYears}</p>
                 <p>Age</p>
               </div>
-          </div>
-          <div className={styles['driver-races-info']}>
-                <div>
+                <div style={{gridArea: 'gps'}}>
                   <p>{selectedDriver.grands_prix_entered}</p>
                   <p>GP's</p>
                 </div>
-                <div>
+                <div style={{gridArea: 'podiums'}}>
                   <p>{selectedDriver.podiums}</p>
                   <p>podiums</p>
                 </div>
-                <div>
+                <div style={{gridArea: 'hrf'}}>
                   <p>{getOrdinalSuffix(selectedDriver.highest_race_finish.position)} <span className={styles['hrf-number']}>(x{selectedDriver.highest_race_finish.number})</span></p>
                   <p>highest race finnish</p>
                 </div>
-                <div>
+                <div style={{gridArea: 'wc'}}>
                   <p>{selectedDriver.world_championships}</p>
                   <p>WC</p>
                 </div>
               </div>
             </div>
-          </div>
           </>
   );
 };

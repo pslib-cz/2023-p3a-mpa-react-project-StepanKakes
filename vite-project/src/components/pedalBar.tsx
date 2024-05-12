@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDriverDataContext } from '../context/driverDataContext';
 import { PedalBarProps } from '../types/index';
-import styles from './pedalBar.module.css';
+import styles from '../styles/pedalBar.module.css';
 
 const PedalBar: React.FC<PedalBarProps> = ({ pedalType }) => { 
   const { carData } = useDriverDataContext();

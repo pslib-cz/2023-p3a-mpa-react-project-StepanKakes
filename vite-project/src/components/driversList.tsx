@@ -75,7 +75,7 @@ const handleDriverClick = async (driverId: number) => {
         {drivers.map(driver => (
           <li className={styles.driver} key={driver.driver.id} onClick={() => handleDriverClick(driver.driver.id)}>
             <p className={styles['driver__position']}>{String(driver.position)}</p>
-            <p className={styles['driver__name']}>{driver.driver.name}</p>
+            <p className={styles['driver__name']}>{window.innerWidth <= 765 ? driver.driver.abbr : driver.driver.name}</p>
             <p className={styles['driver__points']}>{driver.points}pts</p>
           </li>
         ))}
