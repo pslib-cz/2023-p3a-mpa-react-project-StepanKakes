@@ -9,7 +9,6 @@ import Speedometer, {
   DangerPath,
 } from 'react-speedometer';
 
-import styles from './speedometer.module.css';
 import { useEffect, useState } from 'react';
 
 const SpeedMeter = () => {
@@ -32,7 +31,7 @@ const SpeedMeter = () => {
   }, []);
 
   return (
-    <div className={styles['speedometer-container']}>
+    <div>
       <Speedometer value={carData?.speed} fontFamily='f1' width={speedometerSize} max={400}>
         <Background />
         <Arc arcWidth={10} />
