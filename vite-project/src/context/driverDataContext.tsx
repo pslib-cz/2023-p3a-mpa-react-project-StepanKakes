@@ -35,7 +35,6 @@ export const DriverDataProvider: React.FC<PropsWithChildren> = ({ children }) =>
   const [driverPositions, setDriverPositions] = useState<DriverPosition[]>([]);
   const [driverDetails, setDriverDetails] = useState<LiveDriverDetail[]>([]);
   const [lastDate, setLastDate] = useState<string | null>(null);
-  const [setRacesData] = useState<Races>([]);
   const [nextRace, setNextRace] = useState<Race | null>(null);
  /* const [lastDateLocations, setLastDateLocations] = useState<string | null>(null);
   const [locationData, setLocationlData] = useState<Location[]>([]);*/
@@ -49,7 +48,6 @@ export const DriverDataProvider: React.FC<PropsWithChildren> = ({ children }) =>
     })
       .then(response => response.json())
       .then(data => {
-        setRacesData(data.response);
         findNextRace(data.response);
       })
       .catch(error => console.error('Error fetching races:', error));
