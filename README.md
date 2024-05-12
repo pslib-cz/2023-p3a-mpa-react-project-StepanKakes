@@ -1,11 +1,19 @@
 # F1 stats dashboard
-## Aplikace ještě není hotová
-aplikace je funkční ale je nutné ještě dodělat/doladit pár funkcionalit a vylepšit styly a zlepšit responsibilitu
 
 
+## ukázka "hlavní" live funkcionality z 5.5.2024 (poslední závod který se v časovém rozmezí projektu jel), v tu dobu ještě nebyla aplikace zcela hotová, nyní jsou přidány nové funkcionality
 https://github.com/pslib-cz/2023-p3a-mpa-react-project-StepanKakes/assets/91247524/d0e8bc83-e793-48b4-9e51-f739b319ff53
 
+##ukázka "finálního" live dashboardu (testováno mimo závod se starými daty)
+https://github.com/pslib-cz/2023-p3a-mpa-react-project-StepanKakes/assets/91247524/c3f67673-7895-4c8f-8ada-cb3a56038122
 
+## Dashboard funguje pouze pokud je zrovna raceweekend tzn: practice/quali/sprint/race - jinak se zobrazí odpočet
+## Kvůli tomu bylo velice složité testovat funkcionalitu, převážně to bylo možné pouze v neděli když byl závod (za dobu projektu asi 3x)
+## aplikace má několik nedostatků, limity pro live API mohou občas odmítnout request, nebo ho dlouho načítat
+## API pro zobrazení žebřicku jezdců má limit 100 requestů za den
+## Kvůli časovému nedostatku a omezeným možnostem debugování live funkcionalit, není ještě hotové zobrazení žebříčku i pro constructors (něco co by se dalo v budoucnu ještě dodělat)
+## Možné budoucí upgrady: zobrazení žebříčku constructors, zobrazení informací o sessions, live zobrazení pozic jezdců (limitace API), další komponenty v live dashboardu, historie závodů (limitace API), barevný background
+[Figma](https://www.figma.com/file/LYV1BtY0WuTrVDIoS9kguX/f1-dashboard?type=design&node-id=14%3A2&mode=design&t=IlCSR7CUO4aYP8ol-1)
 
 ## Téma
 
