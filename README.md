@@ -13,7 +13,7 @@ https://github.com/pslib-cz/2023-p3a-mpa-react-project-StepanKakes/assets/912475
 - API pro zobrazení žebřicku jezdců má limit 100 requestů za den
 - Kvůli časovému nedostatku a omezeným možnostem debugování live funkcionalit, není ještě hotové zobrazení žebříčku i pro constructors (něco co by se dalo v budoucnu ještě dodělat)
 - Možné budoucí upgrady: zobrazení žebříčku constructors, zobrazení informací o sessions, live zobrazení pozic jezdců (limitace API), další komponenty v live dashboardu, historie závodů (limitace API), barevný background
-[Figma](https://www.figma.com/file/LYV1BtY0WuTrVDIoS9kguX/f1-dashboard?type=design&node-id=14%3A2&mode=design&t=IlCSR7CUO4aYP8ol-1)
+  [website](https://pslib-cz.github.io/2023-p3a-mpa-react-project-StepanKakes/)
 
 ## Téma
 
