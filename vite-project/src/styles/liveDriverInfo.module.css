@@ -1,0 +1,100 @@
+.live-driver-info-container {
+    display: grid;
+    grid-template-rows: auto auto auto; /* Adjust this line as needed */
+    grid-template-areas: 
+        "laptime driverpreview driverpreview ."
+        "speedmeter brakebar throttlebar rpmmeter"
+        "stintstable . . nearbydriverslist";
+    justify-items: center;
+    margin: 0 auto;
+    width: 70%;
+    
+}
+
+.live-driver-info-container > div:nth-child(1) {
+    grid-area: laptime;
+}
+.live-driver-info-container > div:nth-child(2) {
+    grid-area: driverpreview;
+}
+.live-driver-info-container > div:nth-child(3) {
+    grid-area: speedmeter;
+    width: fit-content;
+    height: fit-content;
+}
+.live-driver-info-container > div:nth-child(6) {
+    grid-area: rpmmeter;
+    width: fit-content;
+    height: fit-content;
+}
+
+.live-driver-info-container > div:nth-child(4) {
+    grid-area: brakebar;
+    margin-right: 1em;
+}
+  
+.live-driver-info-container > div:nth-child(5) {
+  grid-area: throttlebar;
+  margin-left: 1em;
+}
+.live-driver-info-container > div:nth-child(7) {
+    grid-area: stintstable;
+}
+.live-driver-info-container > div:nth-child(8) {
+    grid-area: nearbydriverslist;
+}
+.live-driver-info-container > div:nth-child(9) {
+    grid-area: livelocation;
+}
+/* Responsive layout for viewports up to 768px wide */
+
+@media (max-width: 1665px) {
+    .live-driver-info-container {
+        width: auto;
+    }
+}
+
+@media (max-width: 1330px) {
+    .live-driver-info-container {
+        grid-template-columns: 1fr 10vw 10vw 1fr;
+    }
+}
+
+@media (max-width: 1120px) {
+    .live-driver-info-container {
+        row-gap: 2em;
+        grid-template-areas: 
+            "laptime laptime driverpreview driverpreview"
+            "speedmeter speedmeter rpmmeter rpmmeter"
+            "brakebar brakebar throttlebar throttlebar"
+            "nearbydriverslist nearbydriverslist stintstable stintstable";
+    }
+}
+
+
+@media (max-width: 680px) {
+    .live-driver-info-container {
+        margin-bottom: 2em;
+        row-gap: 2em;
+        grid-template-columns: auto;
+        grid-template-areas: 
+            "laptime laptime"
+            "driverpreview driverpreview"
+            "speedmeter speedmeter"
+            "rpmmeter rpmmeter"
+            "brakebar throttlebar"
+            "nearbydriverslist nearbydriverslist"
+            "stintstable stintstable";
+    }
+    .live-driver-info-container > div:nth-child(4) {
+        margin-right: 0;
+    }
+      
+    .live-driver-info-container > div:nth-child(5) {
+      margin-left: 0;
+    }
+
+    .live-driver-info-container > div:nth-child(2) {
+        margin: 0;
+    }
+}

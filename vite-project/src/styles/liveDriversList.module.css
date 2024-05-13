@@ -1,0 +1,197 @@
+@font-face {
+    font-family: 'f1';
+    src: url(../fonts/Formula1-Regular.otf);
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'f1';
+    src: url(../fonts/Formula1-Bold.otf);
+    font-weight: 800;
+  }
+  @font-face {
+    font-family: 'f1-wide';
+    src: url(../fonts/Formula1-Wide.otf);
+  }
+
+.drivers-list{
+  margin: 0;
+    max-height: 80vh;
+    overflow-y: auto;
+    direction: rtl; 
+    padding: 0;
+}
+
+.drivers-list::-webkit-scrollbar {
+    width: 8px;
+    
+
+  }
+  
+  .drivers-list::-webkit-scrollbar-track {
+    background: none;
+  }
+  
+  .drivers-list::-webkit-scrollbar-thumb {
+    background: none;
+    border-radius: 5px;
+    transition: fadeIn 0.5s ease-in;
+  }
+  
+  .drivers-list:hover::-webkit-scrollbar-thumb {
+    background: #414141;
+    
+}
+
+.driver{
+  align-items: center;
+    display: grid;
+    grid-template-columns: 2em auto 1fr 4em;
+    list-style-type: none;
+    box-shadow: 0 0 0 2px #3D3D3D; 
+    background: linear-gradient(90deg, rgba(23,23,23,1) 0%, rgba(35,35,35,1) 51%, rgba(23,23,23,1) 100%);
+    margin: .75em;
+    padding: .25em .5em;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    font-family: 'f1';
+    font-weight: 400;
+    gap: .5em;
+    direction: ltr;
+}
+.driver:first-child {
+  margin-top: 4px; /* Remove top margin from the first driver */
+}
+
+.driver:last-child {
+  margin-bottom: 4px; /* Remove bottom margin from the last driver */
+}
+
+.driver:hover{
+    box-shadow: 0 0 0 4px #3D3D3D;
+    cursor: pointer;
+}
+.driver p{
+    padding: 0;
+    margin:0;
+}
+
+.driver__interval{
+  grid-column: 4;
+  justify-self: end;
+}
+.driver__position{
+    font-family: 'f1';
+    font-weight: 800;
+    grid-column: 1;
+    justify-self: start;
+}
+.driver__name{
+  justify-self: start;
+  white-space: nowrap;
+  grid-column: 3;
+}
+.driver__team-image{
+  width: 2em;
+  grid-column: 2;
+  justify-self: start;
+}
+
+.drivers-list-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width: 1120px) {
+  .drivers-list{
+    display: flex;
+    width: 80vw;
+    direction: ltr;
+}
+.drivers-list-container{
+  height: 100%;
+  padding: 0 1em;
+}
+.drivers-list::-webkit-scrollbar {
+  height: 8px;
+}
+.driver:first-child {
+  margin-top: .75em;
+  margin-left: 4px;
+}
+
+.driver:last-child {
+  margin-bottom: .75em;
+  margin-right: 4px;
+}
+}
+
+@media (max-width: 680px) {
+  .drivers-list{
+    width: 90vw;
+    direction: ltr;
+    margin-bottom: 2em;
+
+}
+  .driver{
+    margin: .75em .25em;
+  }
+}
+
+.switch-button {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+
+
+.switch-button:focus{
+  outline: none;
+}
+
+label { 
+  pointer-events: none;
+}
+label .input {
+  display: none;
+}
+
+label .input:checked + .toggle-wrapper > .selector {
+  left: calc(100% - 1.2em );
+}
+
+label .toggle-wrapper {
+  position: relative;
+  width: 2em;
+  height: 1.25em;
+  background-color: #eaeaea;
+  border-radius: 999px;
+  margin: auto;
+  cursor: pointer;
+  pointer-events: all;
+}
+label .toggle-wrapper .selector {
+  width: 1.15em;
+  height: 1.15em;
+  position: absolute;
+  top: 50%;
+  left: .1em;
+  transform: translateY(-50%);
+  background-color: #161616;
+  transition: left 0.25s ease;
+  border-radius: 50%;
+}
+
+
+.buttons-container{
+  width: calc(100% - 1.5em);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0.938em;
+}
+
+.buttons-container > :first-child {
+  margin-left: 8px;
+}

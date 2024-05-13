@@ -1,0 +1,54 @@
+.bar-body{
+    width: 2em;
+    height: 8em;
+    background-color: #3D3D3D;
+    display: flex;
+    margin: auto;
+    justify-self: center;
+    position: relative;
+}
+
+.bar-container{
+    position: relative;
+    display: grid;
+    grid-template-columns: .8fr 1fr .8fr;
+    gap: .5em;
+}
+
+.bar-container ul li{
+    list-style: none;
+    text-align: right;
+    font-size: .75em;
+    line-height: 50%;
+}
+
+
+.bar-container ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bar-inner{
+    background-color: black;
+    width: 2em;
+    position: absolute;
+    bottom: 0;
+}
+
+.bar{
+    border: 2px solid #3D3D3D;
+    background: linear-gradient(90deg, rgba(23,23,23,1) 0%, rgba(35,35,35,1) 51%, rgba(23,23,23,1) 100%);
+    border-radius: 10px;
+    padding: 1.5em .25em .25em ;
+    width: 6.25em;
+    height: fit-content;
+    font-family: F1;
+}
+
+.bar > p{
+    text-align: center;
+    margin: .45em 0 0 0;
+}

@@ -1,0 +1,51 @@
+.stints-table-container{
+    width: 20.85em;
+    background: linear-gradient(90deg, rgba(23,23,23,1) 0%, rgba(35,35,35,1) 51%, rgba(23,23,23,1) 100%);
+    height: fit-content;
+    border-radius: 10px;
+    border: 2px solid #3D3D3D;
+    padding: .75em 1.5em;
+}
+
+.stints-table-container table{
+    border-spacing: .5em .5em;
+}
+
+.stint-number{
+    text-align: left;
+    font-weight: 800;
+}
+
+.tyre{
+    background-color: black;
+    width: 2.25em;
+    height: 2.25em;
+    border-radius: 50%;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.tyre svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.tyre-age{
+    background-color: rgba(100, 100,100, .2);
+    border-radius: 1.25em;
+    padding: 0.25em 0.5em;
+}
+
+@media (max-width: 1450px) {
+    .stints-table-container{
+        width: 15.85em;
+    }
+    .stints-table-container table{
+        border-spacing: .25em .5em;
+    }
+    .tyre-age{
+        font-size: .75rem;
+        padding: 0;
+    }
+}

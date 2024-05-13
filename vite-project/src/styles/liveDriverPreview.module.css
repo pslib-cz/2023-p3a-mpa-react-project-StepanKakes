@@ -1,0 +1,60 @@
+.driver-image{
+    width: 200px;
+    height: 200px;
+    z-index: 2;
+    position: absolute;
+    left: 4em;
+    top: 2em;
+}
+
+.ldp-container{
+    width: 230px;
+    height: 230px;
+    background-color: aquamarine;
+    border-radius: 50%;
+    position: relative;
+    z-index: 6;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgba(23,23,23,1) 0%, rgba(35,35,35,1) 51%, rgba(23,23,23,1) 100%);
+    border: 2px solid #3D3D3D;
+    margin: 0 5em;
+}
+
+.driver-number-image{
+    position: absolute;
+    left: 0;
+    top: 4em;
+    width: 10em;
+    z-index: 1;
+}
+.driver-name{
+    position: absolute;
+    z-index: 5;
+    bottom: 1em;
+    left: 1em;
+    text-shadow:
+    3px 3px 0 #000,
+    -3px 3px 0 #000,
+    -3px -3px 0 #000,
+    3px -3px 0 #000;
+}
+
+@media (max-width: 1450px) {
+    .ldp-container{
+        width: 200px;
+        height: 200px;
+    }
+    .driver-number-image{
+        width: 8em;
+    }
+    .driver-image{
+        width: 170px;
+        height: 170px;
+    }
+    .driver-name{
+        bottom: 0.75em;
+        left: 1em;
+        font-size: 1.25rem;
+    }
+
+}
