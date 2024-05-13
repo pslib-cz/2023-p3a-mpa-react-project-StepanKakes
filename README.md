@@ -8,7 +8,7 @@ https://github.com/pslib-cz/2023-p3a-mpa-react-project-StepanKakes/assets/912475
 https://github.com/pslib-cz/2023-p3a-mpa-react-project-StepanKakes/assets/91247524/c3f67673-7895-4c8f-8ada-cb3a56038122
 
 - Dashboard funguje pouze pokud je zrovna raceweekend tzn: practice/quali/sprint/race - jinak se zobrazí odpočet
-- Kvůli tomu bylo velice složité testovat funkcionalitu, převážně to bylo možné pouze v neděli když byl závod (za dobu projektu asi 3x)
+- Často bylo složité testovat funkcionalitu, převážně to bylo možné pouze v neděli když byl závod (za dobu projektu asi 3x)
 - Aplikace má několik nedostatků, limity pro live API mohou občas odmítnout request, nebo ho dlouho načítat
 - API pro zobrazení žebřicku jezdců má limit 100 requestů za den
 - Kvůli časovému nedostatku a omezeným možnostem debugování live funkcionalit, není ještě hotové zobrazení žebříčku i pro constructors (něco co by se dalo v budoucnu ještě dodělat)
